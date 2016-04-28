@@ -18,7 +18,7 @@ class RedisClassy
           nil
         else
           raise Error.new('RedisClassy.redis is not assigned') if RedisClassy.redis.nil?
-          Redis::Namespace.new(self.name, redis: RedisClassy.redis)
+          Redis::Namespace.new(self.name, :redis => RedisClassy.redis)
         end
       end
     end
